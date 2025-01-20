@@ -1,0 +1,136 @@
+/* Estilo geral */
+header {
+    background-color: #f9f9f9; /* Cor de fundo alterada para #f9f9f9 */
+    padding: 1rem;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-menu {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9; /* Cor de fundo alterada para #f9f9f9 */
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-content.active {
+    display: flex;
+}
+
+.mobile-menu-content ul {
+    text-align: center;
+}
+
+.mobile-menu-content ul li {
+    margin-bottom: 1.5rem;
+}
+
+.mobile-menu-content ul li a {
+    font-size: var(--fs-lg);
+    color: var(--text-color);
+}
+
+.mobile-menu-content .btn-wrapper {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+/* Para telas grandes */
+@media (min-width: 1280px) {
+    .mobile-menu {
+        display: none;
+    }
+
+    .desktop-only {
+        display: block;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    nav>.container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: var(--max-width);
+    }
+
+    nav img {
+        flex: 0 0 auto;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-grow: 1;
+    }
+
+    nav ul li a {
+        color: var(--text-color);
+        font-weight: var(--fw-md);
+        font-size: var(--fs-sm);
+        text-transform: uppercase;
+        transition: color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+        color: var(--primary-color);
+    }
+}
+
+/* Para telas menores */
+@media (max-width: 1280px) {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    nav>.container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-inline: var(--px-lg);
+    }
+
+    nav img {
+        flex: 0 0 auto;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-menu .btn-wrapper {
+        cursor: pointer;
+        padding: 5px;
+    }
+}

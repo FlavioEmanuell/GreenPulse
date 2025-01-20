@@ -1,0 +1,60 @@
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: calc(var(--py-xl) / 2) var(--px-lg); 
+    min-height: 80vh; 
+  }
+  
+  #hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  #hero h1 {
+    color: var(--secondary-color);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+    margin-bottom: var(--py-base); 
+  }
+  
+  #hero p {
+    color: var(--text-color);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    margin-bottom: var(--py-base); 
+  }
+  
+  #hero .desktop-only {
+    display: none;
+  }
+  
+  #hero .flex {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  @media (min-width: 1280px) {
+    #hero p.desktop-only {
+      display: block;
+      color: var(--seconde-text-color);
+    }
+  
+    #hero {
+      text-align: left;
+      padding: calc(var(--py-xl) / 2) var(--px-lg); 
+    }
+  
+    #hero h1 {
+      font-size: var(--fs-2xl);
+    }
+  
+    #hero p {
+      font-size: var(--fs-lg);
+    }
+  }
+  
