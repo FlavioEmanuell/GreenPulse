@@ -50,7 +50,7 @@ export default function Home() {
                       <a href="#">Home</a>
                     </li>
                     <li>
-                      <a href="#solution">Soluções</a>
+                      <a href="#about-us">Sobre nós</a>
                     </li>
                     <li>
                       <a href="#contact">Contato</a>
@@ -128,9 +128,9 @@ export default function Home() {
           </p>
 
           <div className="images-gallery">
-            <img src="/src/assets/images/ft1.jpeg" alt="Imagem 1" />
-            <img src="/src/assets/images/ft2.jpeg" alt="Imagem 2" />
-            <img src="/src/assets/images/ft3.jpeg" alt="Imagem 3" />
+            <img src="/src/assets/ft1.jpeg" alt="Imagem 1" />
+            <img src="/src/assets/ft2.jpeg" alt="Imagem 2" />
+            <img src="/src/assets/ft3.jpeg" alt="Imagem 3" />
           </div>
 
           <div className="flex gap-1">
@@ -144,7 +144,7 @@ export default function Home() {
       <section id="contact">
         <header>
           <h2>Fale conosco</h2>
-          
+
           <p>
             O GreenPulse é um projeto inovador focado em transformar o manejo
             avícola por meio da automação e sustentabilidade. Nosso objetivo é
@@ -185,27 +185,34 @@ export default function Home() {
       </section>
 
       <footer id="footer">
-  <div className="footer-container">
-    <div className="footer-links">
-      <ul>
-        <li><a href="#about-us">Sobre nós</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-    </div>
-    <div className="footer-social">
-
-      <a href="https://www.instagram.com/greenpulse_agro/" aria-label="Instagram" target="_blank">
-        <i className="fab fa-instagram"></i>
-      </a>
-      <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
-    </div>
-  </div>
-  <div className="footer-bottom">
-    <p>&copy; 2025 GreenPulse. Todos os direitos reservados.</p>
-  </div>
-</footer>
-
-
+        <div className="footer-container">
+          <div className="footer-links">
+            <ul>
+              <li>
+                <a href="#about-us">Sobre nós</a>
+              </li>
+              <li>
+                <a href="#contact">Contato</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-social">
+            <a
+              href="https://www.instagram.com/greenpulse_agro/"
+              aria-label="Instagram"
+              target="_blank"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i className="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2025 GreenPulse. Todos os direitos reservados.</p>
+        </div>
+      </footer>
     </>
   );
 }
