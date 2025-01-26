@@ -14,14 +14,15 @@
 }
 
 #about-us h1 {
-  font-size: var(--fs-2xl); /* Mantido igual ao #hero */
+  font-size: var(--fs-2xl);
   font-weight: var(--fw-bold);
   color: var(--secondary-color);
+  line-height: 1.2;
   margin-bottom: var(--py-sm);
 }
 
 #about-us p {
-  font-size: var(--fs-base); /* Mantido igual ao #hero */
+  font-size: var(--fs-base);
   line-height: 1.6;
   color: var(--second-text-color);
   margin-bottom: var(--py-sm);
@@ -65,20 +66,20 @@
 
 @media (max-width: 1280px) {
   #about-us .images-gallery {
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
   }
 
   #about-us .images-gallery img {
-    width: 80%;
-    margin-bottom: 1rem;
+      width: 80%;
+      margin-bottom: 1rem;
   }
 
   #about-us h1 {
-    font-size: var(--fs-2xl); /* Igual ao #hero */
+      font-size: var(--fs-2xl); /* Mantido igual ao #hero */
   }
 
   #about-us p {
-    font-size: var(--fs-base); /* Igual ao #hero */
+      font-size: var(--fs-lg); /* Mantido igual ao #hero */
   }
 }

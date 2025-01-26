@@ -1,37 +1,24 @@
-.btn-primary {
-    width: 100%;
-    background: var(--primary-color);
-    color: var(#fff);
-    font-weight: var(--fw-bold);
-    font-size: var(--fs-sm);
-    padding-block: 0.825rem;
-    padding-inline: 1.5rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    border: solid transparent 0.15rem;
-}
-
-.btn-primary:hover {
-    background: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
+/* Botões Primário e Secundário */
+.btn-primary,
 .btn-secondary {
     width: 100%;
-    background: transparent;
-    color: var(--primary-color);
-    font-weight: var(--fw-bold);
-    font-size: var(--fs-sm);
-    padding-block: 0.825rem;
-    padding-inline: 1.5rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    border: solid var(--primary-color) 0.15rem;
+    background: var(--primary-color); /* Cor de fundo principal */
+    color: #fff; /* Cor do texto */
+    font-weight: var(--fw-bold); /* Peso da fonte */
+    font-size: var(--fs-sm); /* Tamanho da fonte */
+    padding-block: 0.825rem; /* Espaçamento vertical interno */
+    padding-inline: 1.5rem; /* Espaçamento horizontal interno */
+    border-radius: 0.4rem; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de botão */
+    border: solid transparent 0.15rem; /* Bordas transparentes por padrão */
+    text-align: center; /* Centralizar texto */
+    display: inline-block; /* Para manter comportamento consistente */
+    transition: all 0.3s ease-in-out; /* Transição suave */
 }
 
+.btn-primary:hover,
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--light-text-color);
-    border-color: transparent;
+    background: transparent; /* Fundo transparente no hover */
+    color: var(--primary-color); /* Texto com a cor principal */
+    border-color: var(--primary-color); /* Borda com a cor principal */
 }

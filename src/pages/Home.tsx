@@ -97,8 +97,9 @@ export default function Home() {
           </p>
           <div className="flex gap-1">
             <span>
-              <Button text="Descubra a Greenpulse" />
+              <Button text="Descubra a Greenpulse" href="#about-us" />
             </span>
+
             <span className="desktop-only">
               <Button text="Saiba Mais" secondary />
             </span>
@@ -134,8 +135,8 @@ export default function Home() {
           </div>
 
           <div className="flex gap-1">
-            <span className="desktop-only">
-              <Button text="Entre em Contato" secondary />
+            <span>
+              <Button text="Entre em Contato" secondary href="#contact" />
             </span>
           </div>
         </div>

@@ -1,14 +1,26 @@
-import "../styles/buttons.css"
+import "../styles/buttons.css";
 
 interface IButtonProps {
-    text: string;
-    secondary?: boolean;
+  text: string;
+  href?: string; 
+  secondary?: boolean;
+  onClick?: () => void; 
 }
 
-export default function Button({ text, secondary }: IButtonProps) {
+export default function Button({ text, href, secondary, onClick }: IButtonProps) {
+  const className = secondary ? "btn-secondary" : "btn-primary";
+
+  if (href) {
     return (
-        <button className={secondary ? "btn-secondary" : "btn-primary"}>
-            {text}
-        </button>
-    )
+      <a href={href} className={className}>
+        {text}
+      </a>
+    );
+  }
+
+  return (
+    <button className={className} onClick={onClick}>
+      {text}
+    </button>
+  );
 }
