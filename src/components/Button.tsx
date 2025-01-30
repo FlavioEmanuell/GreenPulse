@@ -5,7 +5,7 @@ interface IButtonProps {
   href?: string;
   secondary?: boolean;
   onClick?: () => void;
-  type?: "button" | "submit" | "reset"; // Para compatibilidade com formulários
+  type?: "button" | "submit" | "reset"; 
   disabled?: boolean;
 }
 

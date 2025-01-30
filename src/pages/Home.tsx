@@ -19,7 +19,7 @@ export default function Home() {
       document.documentElement.style.overflowY = "auto";
     }
   }, [showMobileMenu]);
-
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
@@ -172,41 +172,54 @@ export default function Home() {
         </p>
         <p className="desktop-only">Tem alguma dúvida? Envie agora!</p>
       </header>
-
       <div className="contact-section">
-        <form className="form-container" onSubmit={handleSubmit}>
-          <label htmlFor="email" className="form-label">
-            Email:
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder="Digite seu e-mail"
-            className="form-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+  <form className="form-container" onSubmit={handleSubmit}>
+    <label htmlFor="name" className="form-label">
+      Nome:
+    </label>
+    <input
+      id="name"
+      type="text"
+      placeholder="Digite seu nome"
+      className="form-input"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      required
+    />
 
-          <label htmlFor="message" className="form-label">
-            Mensagem:
-          </label>
-          <textarea
-            id="message"
-            placeholder="Escreva sua mensagem aqui..."
-            className="form-input"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          ></textarea>
+    <label htmlFor="email" className="form-label">
+      Email:
+    </label>
+    <input
+      id="email"
+      type="email"
+      placeholder="Digite seu e-mail"
+      className="form-input"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+    />
 
-          <div className="form-actions">
-            <Button text="Enviar mensagem" secondary={false} type="submit" />
-          </div>
+    <label htmlFor="message" className="form-label">
+      Mensagem:
+    </label>
+    <textarea
+      id="message"
+      placeholder="Escreva sua mensagem aqui..."
+      className="form-input"
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      required
+    ></textarea>
 
-          {responseMessage && <p className="response-message">{responseMessage}</p>}
-        </form>
-      </div>
+    <div className="form-actions">
+      <Button text="Enviar mensagem" secondary={false} type="submit" />
+    </div>
+
+    {responseMessage && <p className="response-message">{responseMessage}</p>}
+  </form>
+</div>
+     
     </section>
 
       <footer id="footer">
