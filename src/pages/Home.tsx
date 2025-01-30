@@ -20,6 +20,23 @@ export default function Home() {
     }
   }, [showMobileMenu]);
 
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+
+    const response = await fetch("/.netlify/functions/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, message }),
+    });
+
+    const result = await response.json();
+    setResponseMessage(result.message || "Erro ao enviar!");
+  };
+
   return (
     <>
       <header className="container py-sm">
@@ -143,47 +160,54 @@ export default function Home() {
       </section>
 
       <section id="contact">
-        <header>
-          <h2>Fale conosco</h2>
+      <header>
+        <h2>Fale conosco</h2>
+        <p>
+          O GreenPulse é um projeto inovador focado em transformar o manejo
+          avícola por meio da automação e sustentabilidade. Nosso objetivo é
+          melhorar a produtividade e o bem-estar dos animais, oferecendo
+          soluções inteligentes para o setor. Estamos comprometidos em criar
+          um impacto positivo no campo, através de uma equipe multidisciplinar
+          dedicada à inovação e melhoria contínua.
+        </p>
+        <p className="desktop-only">Tem alguma dúvida? Envie agora!</p>
+      </header>
 
-          <p>
-            O GreenPulse é um projeto inovador focado em transformar o manejo
-            avícola por meio da automação e sustentabilidade. Nosso objetivo é
-            melhorar a produtividade e o bem-estar dos animais, oferecendo
-            soluções inteligentes para o setor. Estamos comprometidos em criar
-            um impacto positivo no campo, através de uma equipe multidisciplinar
-            dedicada à inovação e melhoria contínua.
-          </p>
-          <p className="desktop-only">Tem alguma dúvida? Envie agora!</p>
-        </header>
+      <div className="contact-section">
+        <form className="form-container" onSubmit={handleSubmit}>
+          <label htmlFor="email" className="form-label">
+            Email:
+          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Digite seu e-mail"
+            className="form-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <div className="contact-section">
-          <form className="form-container">
-            <label htmlFor="email" className="form-label">
-              Email:
-            </label>
-            <input
-              id="email"
-              type="email"
-              placeholder="Digite seu e-mail"
-              className="form-input"
-            />
+          <label htmlFor="message" className="form-label">
+            Mensagem:
+          </label>
+          <textarea
+            id="message"
+            placeholder="Escreva sua mensagem aqui..."
+            className="form-input"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
 
-            <label htmlFor="message" className="form-label">
-              Mensagem:
-            </label>
-            <textarea
-              id="message"
-              placeholder="Escreva sua mensagem aqui..."
-              className="form-input"
-            ></textarea>
+          <div className="form-actions">
+            <Button text="Enviar mensagem" secondary={false} type="submit" />
+          </div>
 
-            <div className="form-actions">
-              <Button text="Enviar mensagem" secondary={false} />
-            </div>
-          </form>
-        </div>
-      </section>
+          {responseMessage && <p className="response-message">{responseMessage}</p>}
+        </form>
+      </div>
+    </section>
 
       <footer id="footer">
         <div className="footer-container">
