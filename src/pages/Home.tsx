@@ -129,9 +129,9 @@ export default function Home() {
           </p>
 
           <div className="images-gallery">
-            <img src="/src/assets/ft1.jpeg"  />
-            <img src="/src/assets/ft2.jpeg"  />
-            <img src="/src/assets/ft3.jpeg"  />
+            <img src="/src/assets/ft1.jpeg" alt="Imagem 1" />
+            <img src="/src/assets/ft2.jpeg"  alt="Imagem 2"/>
+            <img src="/src/assets/ft3.jpeg" alt="Imagem 3" />
           </div>
 
           <div className="flex gap-1">
