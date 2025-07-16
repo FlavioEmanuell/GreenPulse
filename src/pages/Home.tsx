@@ -24,18 +24,32 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
 
-  const handleSubmit = async (event: { preventDefault: () => void; }) => {
-    event.preventDefault();
+  const handleSubmit = async (event: React.FormEvent) => {
+  event.preventDefault();
 
+  try {
     const response = await fetch("/.netlify/functions/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, message }),
+      body: JSON.stringify({ name, email, message }),
     });
 
     const result = await response.json();
-    setResponseMessage(result.message || "Erro ao enviar!");
-  };
+
+    if (response.ok) {
+      setResponseMessage("Mensagem enviada com sucesso!");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      setResponseMessage(result.error || "Erro ao enviar!");
+    }
+  } catch (error) {
+    console.error("Erro de rede:", error);
+    setResponseMessage("Erro ao enviar a mensagem. Tente novamente.");
+  }
+};
+
 
   return (
     <>
