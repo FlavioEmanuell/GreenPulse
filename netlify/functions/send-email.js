@@ -1,29 +1,28 @@
-const sgMail = require("@sendgrid/mail");
+const { Resend } = require('resend');
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 exports.handler = async (event) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
   try {
     const { name, email, message } = JSON.parse(event.body);
 
-    const msg = {
-      to: "agrogreenpulse@gmail.com", // Para onde vai o email
-      from: "agrogreenpulse@gmail.com", // Precisa ser um remetente verificado no SendGrid
-      replyTo: email, // Aqui entra o e-mail de quem preencheu o formulário
-      subject: `Novo contato de ${name}`,
-      text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
-    };
-
-    await sgMail.send(msg);
+    const data = await resend.emails.send({
+      from: 'onboarding@resend.dev', // remetente fixo permitido pela Resend no plano grátis
+      to: 'agrogreenpulse@gmail.com', // você
+      subject: `Novo contato de ${name}`, // assunto do e-mail
+      reply_to: email, // <-- para que você veja "Responder para: email do usuário"
+      text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`, // conteúdo do e-mail
+    });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "E-mail enviado com sucesso!" }),
+      body: JSON.stringify({ message: 'Mensagem enviada com sucesso!', data }),
     };
   } catch (error) {
+    console.error("Erro ao enviar email:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.toString() }),
+      body: JSON.stringify({ error: error.message || 'Erro interno' }),
     };
   }
 };
