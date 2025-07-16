@@ -76,10 +76,10 @@
   }
 
   #about-us h1 {
-      font-size: var(--fs-2xl); /* Mantido igual ao #hero */
+      font-size: var(--fs-2xl);
   }
 
   #about-us p {
-      font-size: var(--fs-lg); /* Mantido igual ao #hero */
+      font-size: var(--fs-lg); 
   }
 }
