@@ -37,12 +37,13 @@
   justify-content: space-between;
   gap: 1rem;
   margin-top: var(--py-lg);
+  align-items: center;
 }
 
 #about-us .images-gallery img {
   width: 30%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

@@ -154,15 +154,15 @@ export default function Home() {
           </p>
           <p>
             Com uma equipe formada por Flavio Emanuel, Pedro Madaloso, Rafaela
-            Boldrini, Matheus Weber e Walter Neto, estamos comprometidos em
+            Boldrini e Matheus Weiber, estamos comprometidos em
             criar um impacto positivo para produtores e animais, promovendo
             eficiência e bem-estar em aviários.
           </p>
 
           <div className="images-gallery">
-            <img src="/ft1.png" alt="Imagem 1" />
-            <img src="/ft2.png"  alt="Imagem 2"/>
             <img src="/ft3.png" alt="Imagem 3" />
+            <img src="/ft2.png"  alt="Imagem 2"/>
+            <img src="/ft1.png" alt="Imagem 1" />
           </div>
 
           <div className="flex gap-1">
